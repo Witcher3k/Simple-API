@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 
 
-mongoose.connect('mongodb://localhost/test',
+mongoose.connect('mongodb://localhost/simpleApi',
     { useNewUrlParser: true },
     () => {
         console.log("connected to db")

@@ -9,7 +9,14 @@ const PostSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    tags: [String]
 })
 
-module.exports = mongoose.model('Posts', PostSchema);
+const Post = mongoose.model('Posts', PostSchema);
+
+Post.collection.createIndex({ title: 'text', description: 'text' });
+
+
+module.exports = Post;
+
